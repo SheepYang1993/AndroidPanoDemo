@@ -7,16 +7,18 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 
+import com.blankj.utilcode.util.SDCardUtils;
 import com.lerp.pano.ImagesStitch;
 
 import java.io.File;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import kr.co.namee.permissiongen.PermissionGen;
 
 public class ActivityMain extends AppCompatActivity {
 
-    public static final String DIR = Environment.getExternalStorageDirectory().getPath() + "/360pano/";
+    public static final String DIR = SDCardUtils.getSDCardPathByEnvironment() + File.separator + "360pano";
 
     private String[] permissions = {
             Manifest.permission.WRITE_EXTERNAL_STORAGE,
